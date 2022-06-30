@@ -4,34 +4,38 @@
     <div class="container">
       <div class="row">
         <div class="col-10 d-flex flex-wrap">
-          <div class="col px-3" v-for="post in posts" :key="post.id">
-            <div class="card h_special text-start">
-              <img
-                class="card-img-top"
-                :src="post.cover_images"
-                alt="post.title"
-              />
-              <div class="card-body">
-                <h4 class="card-title">{{ post.title }}</h4>
-                <p class="card-text">{{ trimText(post.content) }}</p>
+          <div class="row row-cols-5">
+            <div class="col" v-for="post in posts" :key="post.id">
+              <div class="card h_special text-start">
+                <img
+                  class="card-img-top"
+                  style="width:195px;height:160px;"
+                  :src="'storage/' + post.cover_image"
+                  alt="post.title"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">{{ post.title }}</h4>
+                  <p class="card-text">{{ trimText(post.content) }}</p>
+                </div>
+                <router-link class="btn btn-primary" :to="{name: 'post',params: {slug: post.slug}}">Visualizza</router-link>
               </div>
             </div>
+            <!-- /.col Posts-->
           </div>
-          <!-- /.col Posts-->
         </div>
         <!-- /.col sx-->
         <div class="col">
-          <div class="col">
+          <div class="col bg-dark text-light rounded shadow p-3">
             <h4 class="p-2"><strong>Categories:</strong></h4>
-            <ul v-for="category in categories" :key="category.id">
-              <li class="btn btn-secondary">{{ category.name }}</li>
+            <ul>
+              <li class="btn btn-secondary m-2" v-for="category in categories" :key="category.id">{{ category.name }}</li>
             </ul>
           </div>
           <!-- /.col Tags-->
-          <div class="col mt-4">
-            <h4 class="p-2"><strong>Tags:</strong></h4>
-            <ul v-for="tag in tags" :key="tag.id">
-              <li class="btn btn-primary">{{ tag.name }}</li>
+          <div class="col mt-4 bg-dark text-light rounded shadow p-3">
+            <h4 class="p-2 ms-4"><strong>Tags:</strong></h4>
+            <ul>
+              <li class="btn btn-primary m-2" v-for="tag in tags" :key="tag.id">{{ tag.name }}</li>
             </ul>
           </div>
           <!-- /.col Categories-->
@@ -105,7 +109,7 @@ export default {
           },
         })
         .then((response) => {
-          console.log(response);
+          //console.log(response);
           //console.log(response.data);
           this.posts = response.data;
         })
@@ -153,6 +157,6 @@ li {
   list-style-type: none;
 }
 .h_special {
-  height: 250px;
+  height: 450px;
 }
 </style>

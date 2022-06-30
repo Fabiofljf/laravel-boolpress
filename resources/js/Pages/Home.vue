@@ -48,7 +48,7 @@
             <div class="card h_special text-start">
               <img
                 class="card-img-top"
-                :src="post.cover_images"
+                :src="'storage/' + post.cover_image"
                 alt="post.title"
               />
               <div class="card-body">

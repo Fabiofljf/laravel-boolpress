@@ -10,11 +10,11 @@
             <ul class="navbar-nav mr-auto">
               <li
                 class="nav-item"
-                v-for="menuItem in menuItems"
-                :key="menuItem.id"
+                v-for="item in menuItems"
+                :key="item.id"
               >
-                <router-link :to="{ name: menuItem.link }">{{
-                  menuItem.route_name
+                <router-link :to="{ name: item.route_link }">{{
+                  item.route_name
                 }}</router-link>
               </li>
             </ul>
@@ -28,7 +28,7 @@
       <router-view></router-view>
     </main>
     <!-- /#site_main_app -->
-    <footer id="site_footer_app">Copyrigth</footer>
+    <footer id="site_footer_app" class="text-center my-5">Copyrigth©</footer>
     <!-- /#site_footer_app -->
   </div>
 </template>
