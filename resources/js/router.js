@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 // These can be imported from other files
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Posts from "./Pages/Posts";
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -16,14 +17,16 @@ import About from "./Pages/About";
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-    { path: "/", component: Home },
-    { path: "/about", component: About },
+    { path: "/", name: Home, component: Home },
+    { path: "/about", name: About, component: About },
+    { path: "/posts", name: Posts, component: Posts },
 ];
 
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
 const router = new VueRouter({
+    mode: "history",
     routes, // short for `routes: routes`
 });
 
