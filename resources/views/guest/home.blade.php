@@ -22,7 +22,6 @@
 </head>
 
 <body>
-    <!-- Add navigation links -->
     <div id="root"></div>
 </body>
 

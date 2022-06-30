@@ -54,7 +54,12 @@ const app = new Vue({
 3. Creo l'istanza router;
 4. Provvedo per l'esportazione;
 5. Importo in front.js
-6. 
+6. Creo una cartella Pages dentro js dove incollo i collegamenti;
+7. Sposto tutto da app.js a posts.js e inserisco <router-view></router-view> in app.js per non refreshare;
+8. Aggiungo mode: 'history', a router per l'URL;
+9. Aggiungo i link di navigazione in app.js;
+10. Strutturo la nav;
+11. 
 
 ## Create i componenti per le pagine da mappare alle rotte
 ## Modificate il componente principale views/App.vue inserendo i componenti di vue-router descritti in getting started ## HTML (https://v3.router.vuejs.org/guide/#html)
