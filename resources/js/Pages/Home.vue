@@ -78,8 +78,8 @@ export default {
         .get("api/posts")
         .then((response) => {
           //console.log(response);
-          //console.log(response.data);
-          const posts = response.data;
+          //console.log(response.data.data);
+          const posts = response.data.data;
           this.posts = posts.slice(0, 4);
         })
         .catch((e) => {
