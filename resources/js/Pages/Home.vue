@@ -99,5 +99,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.h_special{
+height: 450px;
+}
 </style>

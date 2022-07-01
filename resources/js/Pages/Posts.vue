@@ -17,7 +17,7 @@
                   <h4 class="card-title">{{ post.title }}</h4>
                   <p class="card-text">{{ trimText(post.content) }}</p>
                 </div>
-                <router-link class="btn btn-primary" :to="{name: 'post',params: {slug: post.slug}}">Visualizza</router-link>
+                <router-link class="btn btn-primary" :to="{name: 'post', params: {slug: post.slug}}">Visualizza</router-link>
               </div>
             </div>
             <!-- /.col Posts-->
@@ -42,8 +42,7 @@
         </div>
         <!-- /.col dx-->
       </div>
-      <!-- NON POSSO FARLO, NON HO IL DATABASE NECESSARIO MANCA current_page , IMPLEMENTO LA LOGICA-->
-      <!-- <nav aria-label="Page navigation example">
+      <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item" v-if="posts.current_page > 1">
             <a
@@ -80,7 +79,7 @@
             </a>
           </li>
         </ul>
-      </nav> -->
+      </nav>
     </div>
   </main>
 </template>
@@ -110,7 +109,7 @@ export default {
         })
         .then((response) => {
           //console.log(response);
-          //console.log(response.data);
+          console.log(response.data);
           this.posts = response.data;
         })
         .catch((e) => {

@@ -22,9 +22,15 @@ export default {
       axios
         .get("/api/posts/" + this.$route.params.slug)
         .then((response) => {
-          //console.log(response);
-          this.post = response.data;
-          this.loading = false;
+          //console.log(response.data);
+          if(response.data.status_code === 404){
+            //console.log('Errore 404')
+            this.$router.push({name: 'notfound'})
+          }else{
+            //console.log('page found');
+            this.post = response.data
+            this.loading = false
+          }
         })
         .catch((e) => {
           console.error(e);
